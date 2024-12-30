@@ -21,11 +21,13 @@ app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
 
 const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
+const orderRoutes = require("./routes/orders"); 
 
 const api = process.env.API_URL;
 
 app.use(`${api}/users`, usersRoutes);
 app.use(`${api}/products`, productsRoutes);
+app.use(`${api}/orders`, orderRoutes);
 
 // Cloudinary API
 cloudinary.config({
